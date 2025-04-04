@@ -1,4 +1,63 @@
-<div class="container">
-    <h2>{{title}}</h2>
-    <form></form>
+<div class="mt-3">
+    <div class="display-6">
+        {{title}}
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <form>
+                <div class="row mb-3 mt-3">
+                    <label for="name" class="col-sm-2 col-form-label">Nome</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" [(ngModel)]="product.name" name="name" id="name" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mt-3">
+                    <label for="description" class="col-sm-2 col-form-label">Descrição</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" [(ngModel)]="product.description" name="description" id="description" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mt-3">
+                    <label for="price" class="col-sm-2 col-form-label">Preço</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" [(ngModel)]="product.price" name="price" id="price" required>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mt-3">
+                    <label for="category" class="col-sm-2 col-form-label">Categoria</label>
+                    <div class="col-sm-4">
+                        <select class="form-select" [(ngModel)]="product.category" name="category" id="category" required>
+                            <option value="Escolha:" selected></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mt-3">
+                    <label class="col-sm-2 col-form-label">Opções:</label>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="promotion" id="promotion">
+                            <label for="promotion" class="form-label">Promoção</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="newProduct" id="newProduct">
+                            <label for="newProduct" class="form-label">Lançamento</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 mt-4">
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
 </div>
