@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'app-product',
@@ -7,8 +8,17 @@ import { Product } from '../../models/product';
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
+  constructor() {}
+
+  ngOnInit(): void {
+    
+  }
+
   title = "Formulário de Cadastro";
+
+  @Input()
+  categories: Category[] = []
 
   product: Product = {} as Product;
 }
