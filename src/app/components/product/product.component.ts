@@ -21,4 +21,9 @@ export class ProductComponent implements OnInit {
   categories: Category[] = []
 
   product: Product = {} as Product;
+
+  save() {
+    console.log(this.categories)
+    console.log(this.product);
+  }
 }

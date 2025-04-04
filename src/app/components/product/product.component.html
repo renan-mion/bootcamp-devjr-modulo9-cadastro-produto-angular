@@ -29,8 +29,8 @@
                 <div class="row mb-3 mt-3">
                     <label for="category" class="col-sm-2 col-form-label">Categoria</label>
                     <div class="col-sm-4">
-                        <select class="form-select border-dark" name="category" id="category" required>
-                            <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
+                        <select class="form-select border-dark" [(ngModel)]="product.category" name="category" id="category" required>
+                            <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
                         </select>
                     </div>
                 </div>
@@ -39,12 +39,12 @@
                     <label class="col-sm-2 col-form-label">Opções:</label>
                     <div class="col-sm-4">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input border-dark" name="promotion" id="promotion">
+                            <input type="checkbox" class="form-check-input border-dark" [(ngModel)]="product.promotion" name="promotion" id="promotion">
                             <label for="promotion" class="form-label">Promoção</label>
                         </div>
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input border-dark" name="newProduct" id="newProduct">
+                            <input type="checkbox" class="form-check-input border-dark" [(ngModel)]="product.newProduct" name="newProduct" id="newProduct">
                             <label for="newProduct" class="form-label">Lançamento</label>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
 
                 <div class="row mb-3 mt-4">
                     <div class="col-sm-4">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary" (click)="save()">Cadastrar</button>
                     </div>
                 </div>
 
