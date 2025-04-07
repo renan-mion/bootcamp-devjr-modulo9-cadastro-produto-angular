@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../models/product';
 import { Category } from '../../models/category';
 
@@ -9,21 +9,24 @@ import { Category } from '../../models/category';
   styleUrl: './product.component.css'
 })
 export class ProductComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
   title = "Formulário de Cadastro";
 
   @Input()
+  product ?: Product = {} as Product;
+
+  @Input()
   categories: Category[] = []
 
-  product: Product = {} as Product;
+  @Output()
+  saveEmitter = new EventEmitter();
 
   save() {
-    console.log(this.categories)
-    console.log(this.product);
+    this.saveEmitter.emit();
   }
 }

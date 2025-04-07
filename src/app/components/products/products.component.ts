@@ -17,6 +17,8 @@ export class ProductsComponent implements OnInit {
 
   title = "Produtos Cadastrados";
 
+  product: Product = {} as Product;
+
   categories: Category[] = [
     {
       id: 1,
@@ -33,15 +35,12 @@ export class ProductsComponent implements OnInit {
     }
   ];
 
-  products: Product[] = [
-    {
-      id: 1,
-      name: "Produto 1",
-      description: "Esse é o produto 1",
-      price: 19.9,
-      category: this.categories[0],
-      promotion: true,
-      newProduct: true
-    }
-  ];
+  products: Product[] = [];
+
+  saveProduct() {
+    this.product.id = this.products.length + 1;
+    console.log(this.product);
+    this.products.push(this.product);
+    this.product = {} as Product;
+  }
 }

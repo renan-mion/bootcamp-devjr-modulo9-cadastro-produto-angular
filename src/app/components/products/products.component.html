@@ -1,12 +1,12 @@
 <div class="container mt-3">
-    <app-product [categories]="categories"></app-product>
+    <app-product [categories]="categories" [product]="product" (saveEmitter)="saveProduct()"></app-product>
 
     <div class="display-6">{{title}}</div>
 
     <div class="row">
         <div class="col-md-10 offset-md-1">
             <table class="table" id="productsTable">
-                <thead>
+                <thead class="border-2 border-black border-start-0 border-top-0 border-end-0">
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nome</th>
@@ -19,11 +19,19 @@
 
                 <tbody>
                     <tr *ngFor="let product of this.products">
-                        <th>{{product.id}}</th>
-                        <th>{{product.name}}</th>
-                        <th>{{product.description}}</th>
-                        <th>{{product.price}}</th>
-                        <th>{{product.category.name}}</th>
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.category.name}}</td>
+                        <td class="d-flex flex-row gap-1">
+                            <span *ngIf="product.promotion" class="badge bg-success text-white me-1" style="width: 25px;">
+                                P
+                            </span>
+                            <span *ngIf="product.newProduct" class="badge bg-primary text-white me-1" style="width: 25px;">
+                                L
+                            </span>
+                        </td>
                     </tr>
                 </tbody>
             </table>
