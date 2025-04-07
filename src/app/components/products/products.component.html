@@ -22,7 +22,7 @@
                         <td>{{product.id}}</td>
                         <td>{{product.name}}</td>
                         <td>{{product.description}}</td>
-                        <td>{{product.price}}</td>
+                        <td>{{product.price | currency: 'BRL' }}</td>
                         <td>{{product.category.name}}</td>
                         <td class="d-flex flex-row gap-1">
                             <span *ngIf="product.promotion" class="badge bg-success text-white me-1" style="width: 25px;">
