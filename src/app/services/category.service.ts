@@ -26,7 +26,7 @@ export class CategoryService {
     return this.categories;
   }
 
-  addCategory(category: Category) : void {
+  addCategory(category: Category) {
     this.categories.push(category);
   }
 }
